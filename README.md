@@ -2,9 +2,9 @@
 
 Simple project which shows difference between probability distribution when generating pseudo random numbers in Python
 
-##Usage
+## Usage
 
-###Requirements
+### Requirements
 
 This project only supports Python 3.4+.
 
@@ -12,7 +12,7 @@ This project only supports Python 3.4+.
 This project uses `numpy` library
 Use `pip install numpy` to obtain it.
 
-###Syntax
+### Syntax
 
 `python validate.py <dist_type> <args> <num_count> `
 
@@ -22,11 +22,11 @@ Use `pip install numpy` to obtain it.
 
 See below for list of distribution types and valid arguments.
 
-####Optional parameters:
+#### Optional parameters:
 - `-d` or `--debug` - enables debug mode
 - `-p` or `--print` - print distribution in CLI (may overflow line end)
 
-####Distribution types:
+#### Distribution types:
 
 | Distribution type | Value for `<dist_type>` | Arguments for `<args>` |
 | --- | --- | --- |
