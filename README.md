@@ -14,7 +14,7 @@ Use `pip install numpy` to obtain it.
 
 ### Syntax
 
-`python validate.py <dist_type> <args> <num_count> `
+`python validate.py <dist_type> <args> <num_count> <optional_params>`
 
 `<dist_type>` is integer to choose distribution type
 
