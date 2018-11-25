@@ -9,8 +9,8 @@ Simple project which shows difference between probability distribution when gene
 This project only supports Python 3.4+.
 
 
-This project uses `numpy` library
-Use `pip install numpy` to obtain it.
+This project uses `numpy` and `sty` libraries
+Use `pip install numpy` and `pip install sty` to obtain it.
 
 ### Syntax
 
@@ -34,6 +34,9 @@ Use `pip install numpy` to obtain it.
 | Distribution type | Value for `<dist_type>` | Arguments for `<args>` |
 | --- | --- | --- |
 | Uniform (Pythom impl) | 0 | "low, high" |
-| Triangular (Python impl) | 1 | "low, high, mode" |
-| Triangular (Own impl) | 2 | "low, high, mode" |
-| Beta | 3 | "alpha, beta" |
+| Triangular (Own impl) | 1 | "low, high, mode" |
+| Triangular (Python impl) | 2 | "low, high, mode" |
+| Beta (Python impl) | 4 | "alpha, beta" |
+| Beta (NumPy impl) | 20 | "alpha, beta" |
+| Normal (Own impl) | 13 | "mu, sigma" |
+| Normal (Python impl) | 14 | "mu, sigma" |
