@@ -27,12 +27,12 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 
 #### Optional parameters:
 - `-d` or `--debug` - enables debug mode
-- `-p` or `--print` - print distribution in CLI (may overflow line end)
+- `-p` or `--print` - print distribution in CLI
 
 #### Distribution types:
 
 | Distribution type | Value for `<dist_type>` | Arguments for `<args>` |
-| --- | --- | --- |
+| --- | :---: | --- |
 | Uniform (Pythom impl) | 0 | "low, high" |
 | Triangular (Own impl) | 1 | "low, high, mode" |
 | Triangular (Python impl) | 2 | "low, high, mode" |
