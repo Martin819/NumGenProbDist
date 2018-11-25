@@ -1,6 +1,5 @@
 import sys
-import triangular
-import uniform
+import distribution
 
 # def main():
 #   print("[INFO     ] START")
@@ -42,7 +41,7 @@ def uniformRange(gencount, args):
   low = float(args[0])
   high = float(args[1])
   for i in range(0, gencount):
-      generated.append(uniform.getUniform(low, high))
+      generated.append(distribution.getUniform(low, high))
   return generated
 
 def triangularRange(gencount, gentype, args):
@@ -52,8 +51,20 @@ def triangularRange(gencount, gentype, args):
   mode = float(args[2])
   if (gentype == 1):
     for i in range(0, gencount):
-      generated.append(triangular.calculate(low, high, mode))
+      generated.append(distribution.calculateTriangular(low, high, mode))
   elif (gentype == 2):
     for i in range(0, gencount):
-      generated.append(triangular.getTriangular(low, high, mode))
+      generated.append(distribution.getTriangular(low, high, mode))
+  return generated
+
+def betavariateRange(gencount, gentype, args):
+  generated = []
+  alpha = float(args[0])
+  beta = float(args[1])
+  if (gentype == 3):
+    for i in range(0, gencount):
+      generated.append(distribution.calculateBetavariate(alpha, beta))
+  elif (gentype == 4):
+    for i in range(0, gencount):
+      generated.append(distribution.getBetavariate(alpha, beta))
   return generated
