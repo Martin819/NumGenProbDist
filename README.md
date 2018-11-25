@@ -14,17 +14,16 @@ Use `pip install numpy` to obtain it.
 
 ### Syntax
 
-```
-python validate.py <dist_type> <args> <num_count> <optional_params>
-```
+`python validate.py <dist_type> <args> <num_count> <optional_params>`
 
-    `<dist_type>` is integer to choose distribution type
 
-    `<args>` set of arguments for selected distribution type in format `"arg1, arg2, arg3"`
+- `<dist_type>` is integer to choose distribution type
 
-    `<num_count>` parameters is integer which says how many nubers should be generated
+- `<args>` set of arguments for selected distribution type in format `"arg1, arg2, arg3"`
 
-    See below for list of distribution types and valid arguments.
+- `<num_count>` parameters is integer which says how many nubers should be generated
+
+- See below for list of distribution types and valid arguments.
 
 #### Optional parameters:
 - `-d` or `--debug` - enables debug mode
