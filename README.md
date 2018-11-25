@@ -17,7 +17,9 @@ Use `pip install numpy` to obtain it.
 `python validate.py <dist_type> <args> <num_count> `
 
 `<dist_type>` is integer to choose distribution type
+
 `<args>` set of arguments for selected distribution type in format `"arg1, arg2, arg3"`
+
 `<num_count>` parameters is integer which says how many nubers should be generated
 
 See below for list of distribution types and valid arguments.
