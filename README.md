@@ -10,6 +10,7 @@ This project only supports Python 3.4+.
 
 
 This project uses `numpy` and `sty` libraries
+
 Use `pip install numpy` and `pip install sty` to obtain it.
 
 ### Syntax

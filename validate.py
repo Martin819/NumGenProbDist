@@ -85,8 +85,10 @@ def printNumbers(numbers):
       sys.stdout.write(" " + str(round(numbers[n], 4)))
     else:
       if negative:
-        negrange = numpy.arange(0, numbers[n] - minN, step)
-        for i in negrange:
+        minrange = numpy.arange(minN, 0, step)
+        currange = numpy.arange(numbers[n], 0, step)
+        diffrange = len(minrange) - len(currange)
+        for i in range(0, diffrange):
             sys.stdout.write(" ")
       nrange = numpy.arange(numbers[n], 0, step)
       for i in nrange:
