@@ -3,6 +3,8 @@ import math
 import generate
 from statistics import mean, median
 import numpy
+from sty import fg
+import os
 
 debug = False
 printNum = False
@@ -53,19 +55,47 @@ def switcher_gentype(gentype):
   print("[INFO     ] Type: " + switcher.get(gentype, "Invalid type"))
 
 def getNumbers(t):
-  if t == 0:
+  if (t == 0):
     return generate.uniformRange(count, args)
-  elif t == 1:
+  elif (t == 1 or t == 2):
     return generate.triangularRange(count, gentype, args)
-  elif t == 2:
-    return generate.triangularRange(count, gentype, args)
+  elif (t == 3 or t == 4 or t == 20):
+    return generate.betavariateRange(count, gentype, args)
+  elif (t == 13 or t == 14):
+    return generate.normalvariateRange(count, gentype, args)
 
 def printNumbers(numbers):
+  negative = False
+  rows, columns = os.popen('stty size', 'r').read().split()
+  numbers.sort()
+  maxN = max(numbers)
+  minN = min(numbers)
+  diffN = maxN - minN
+  step = diffN / (float(columns) * 0.9)
+  if(minN < 0): negative = True
   for n in range(0, len(numbers)):
-    nrange = numpy.arange(0, numbers[n], 0.01)
-    for i in nrange:
-      sys.stdout.write("|")
-    sys.stdout.write(" " + str(round(numbers[n], 4)))
+    if(numbers[n] >= 0):
+      if negative:
+        negrange = numpy.arange(minN, 0, step)
+        for i in negrange:
+          sys.stdout.write(" ")
+      nrange = numpy.arange(0, numbers[n], step)
+      for i in nrange:
+        sys.stdout.write(fg.white + "|")
+      sys.stdout.write(" " + str(round(numbers[n], 4)))
+    else:
+      if negative:
+        negrange = numpy.arange(0, numbers[n] - minN, step)
+        for i in negrange:
+            sys.stdout.write(" ")
+      nrange = numpy.arange(numbers[n], 0, step)
+      for i in nrange:
+        sys.stdout.write(fg.red + "|")
+      sys.stdout.write(" " + str(round(numbers[n], 4)))
     print()
+
+def stdoutRight(msg):
+  sys.stdout.write(msg.rjust(50))
+  # sys.stdout.write('\b' * len(msg))
 
 main()

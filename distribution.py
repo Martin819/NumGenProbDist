@@ -1,5 +1,6 @@
 import random
-from math import sqrt
+from math import sqrt, cos, pi, log
+import numpy
 
 def getUniform(low, high):
   return random.uniform(low, high)
@@ -21,6 +22,9 @@ def calculateBetavariate(alpha, beta):
 def getBetavariate(alpha, beta):
   return random.betavariate(alpha, beta)
 
+def numpyBetavariate(alpha, beta):
+  return numpy.random.beta(alpha, beta)
+
 def getExpovariate(alpha, beta):
   return random.betavariate(alpha, beta)
 
@@ -32,6 +36,12 @@ def getGauss(mu, sigma):
 
 def getLofnormvariate(mu, sigma):
   return random.lognormvariate(mu, sigma)
+
+def calculateNormalvariate(mu, sigma):
+  y1 = random.uniform(0.0, 1.0) + 1
+  y2 = random.uniform(0.0, 1.0) + 1
+  z = cos(2 * pi * y2) * sqrt(-2 * log(y1))
+  return (z * sigma) + mu
 
 def getNormalvariate(mu, sigma):
   return random.normalvariate(mu, sigma)

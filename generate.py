@@ -67,4 +67,19 @@ def betavariateRange(gencount, gentype, args):
   elif (gentype == 4):
     for i in range(0, gencount):
       generated.append(distribution.getBetavariate(alpha, beta))
+  elif (gentype == 20):
+    for i in range(0, gencount):
+      generated.append(distribution.numpyBetavariate(alpha, beta))
+  return generated
+
+def normalvariateRange(gencount, gentype, args):
+  generated = []
+  mu = float(args[0])
+  sigma = float(args[1])
+  if (gentype == 13):
+    for i in range(0, gencount):
+      generated.append(distribution.calculateNormalvariate(mu, sigma))
+  elif (gentype == 14):
+    for i in range(0, gencount):
+      generated.append(distribution.getNormalvariate(mu, sigma))
   return generated
