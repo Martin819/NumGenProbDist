@@ -14,7 +14,7 @@ Use `pip install numpy` to obtain it.
 
 ### Syntax
 
-```sh
+```
 python validate.py <dist_type> <args> <num_count> <optional_params>
 ```
 
