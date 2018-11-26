@@ -15,7 +15,7 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 
 ### Syntax
 
-`python validate.py <dist_type> <args> <num_count> <optional_params>`
+`python genprob.py <dist_type> <args> <num_count> <optional_params>`
 
 
 - `<dist_type>` is integer to choose distribution type
@@ -29,6 +29,8 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 #### Optional parameters:
 - `-d` or `--debug` - enables debug mode
 - `-p` or `--print` - print CDF and PDF of the numbers in CLI stdout
+- `-c` or `--csv` - output generated numbers into csv file
+- `-v` or `--validate` - validates results
 
 #### Distribution types:
 
