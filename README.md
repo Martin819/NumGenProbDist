@@ -28,7 +28,7 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 
 #### Optional parameters:
 - `-d` or `--debug` - enables debug mode
-- `-p` or `--print` - print distribution in CLI
+- `-p` or `--print` - print CDF and PDF of the numbers in CLI stdout
 
 #### Distribution types:
 
@@ -37,7 +37,16 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 | Uniform (Pythom impl) | 0 | "low, high" |
 | Triangular (Own impl) | 1 | "low, high, mode" |
 | Triangular (Python impl) | 2 | "low, high, mode" |
+| Triangular (NumPy impl) | 22 | "low, high, mode" |
+| Beta (Own impl) | 3 | "alpha, beta" |
 | Beta (Python impl) | 4 | "alpha, beta" |
 | Beta (NumPy impl) | 20 | "alpha, beta" |
+| Exponential (Own impl) | 5 | "lambd" |
+| Exponential (Python impl) | 6 | "lambd" |
+| Exponential (NumPy impl) | 23 | "lambd" |
+| Lognormal (Own impl) | 11 | "mu, sigma" |
+| Lognormal (Python impl) | 12 | "mu, sigma" |
+| Lognormal (NumPy impls) | 21 | "mu, sigma" |
 | Normal (Own impl) | 13 | "mu, sigma" |
 | Normal (Python impl) | 14 | "mu, sigma" |
+| Normal (NumPy impl) | 24 | "mu, sigma" |

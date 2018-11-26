@@ -1,10 +1,12 @@
 import random
-from math import sqrt, cos, pi, log
+from math import sqrt, cos, pi, log, exp
 import numpy
 
+## Uniform
 def getUniform(low, high):
   return random.uniform(low, high)
 
+## Triangular
 def calculateTriangular(a, b, c):
   U = random.uniform(0.0, 1.0)
   F = (c - a) / (b - a)
@@ -16,8 +18,15 @@ def calculateTriangular(a, b, c):
 def getTriangular(low, high, mode):
   return random.triangular(low, high, mode)
 
+def numpyTriangular(low, high, mode):
+  return numpy.random.triangular(low, mode, high)
+
+## Beta
 def calculateBetavariate(alpha, beta):
-  return 0
+  x = random.gammavariate(alpha, 1.0)
+  y = random.gammavariate(beta, 1.0)
+  z = x / (x + y)
+  return z
 
 def getBetavariate(alpha, beta):
   return random.betavariate(alpha, beta)
@@ -25,18 +34,27 @@ def getBetavariate(alpha, beta):
 def numpyBetavariate(alpha, beta):
   return numpy.random.beta(alpha, beta)
 
+## Exponential
+def calculateExpovariate(lambd):
+  return log(random.uniform(0.0,1.0))/lambd
+
 def getExpovariate(alpha, beta):
-  return random.betavariate(alpha, beta)
+  return random.expovariate(alpha, beta)
 
-def getGammavariate(alpha, beta):
-  return random.gammavariate(alpha, beta)
+def numpyExpovariate(lambd):
+  return numpy.random.exponential(lambd)
 
-def getGauss(mu, sigma):
-  return random.gauss(mu, sigma)
+## Lognormal
+def calculateLognormalvariate(mu, sigma):
+  return exp(random.normalvariate(mu, sigma))
 
-def getLofnormvariate(mu, sigma):
+def getLognormvariate(mu, sigma):
   return random.lognormvariate(mu, sigma)
 
+def numpyLognormalvariate(mu, sigma):
+  return numpy.random.lognormal(mu, sigma)
+
+## Normal
 def calculateNormalvariate(mu, sigma):
   y1 = random.uniform(0.0, 1.0) + 1
   y2 = random.uniform(0.0, 1.0) + 1
@@ -45,3 +63,6 @@ def calculateNormalvariate(mu, sigma):
 
 def getNormalvariate(mu, sigma):
   return random.normalvariate(mu, sigma)
+
+def numpyNormalvariate(mu, sigma):
+  return numpy.random.normal(mu, sigma)

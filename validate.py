@@ -55,23 +55,35 @@ def switcher_gentype(gentype):
     0: "Uniform Python",
     1: "Triangular own",
     2: "Triangular Python",
+    22: "Triangular NumPy",
     3: "Beta own",
     4: "Beta Python",
     20: "Beta NumPy",
+    5: "Exponential own",
+    6: "Exponential Python",
+    23: "Exponential NumPy",
+    11: "Lognormal own",
+    12: "Lognormal Python",
+    21: "Lognormal NumPy",
     13: "Normal own",
-    14: "Normal Python"
+    14: "Normal Python",
+    24: "Normal NumPy"
   }
   print("[INFO     ] Type: " + switcher.get(gentype, "Invalid type"))
 
 def getNumbers(t):
   if (t == 0):
     return generate.uniformRange(count, args)
-  elif (t == 1 or t == 2):
-    return generate.triangularRange(count, gentype, args)
+  elif (t == 1 or t == 2 or t == 22):
+    return generate.triangularRange(count, t, args)
   elif (t == 3 or t == 4 or t == 20):
-    return generate.betavariateRange(count, gentype, args)
-  elif (t == 13 or t == 14):
-    return generate.normalvariateRange(count, gentype, args)
+    return generate.betavariateRange(count, t, args)
+  elif (t == 5 or t == 6 or t == 23):
+    return generate.expovariateRange(count, t, args)
+  elif (t == 11 or t == 12 or t == 21):
+    return generate.lognormalvariateRange(count, t, args)
+  elif (t == 13 or t == 14 or t== 24):
+    return generate.normalvariateRange(count, t, args)
 
 def printNumbers(numbers):
   negative = False
@@ -80,9 +92,9 @@ def printNumbers(numbers):
   maxN = max(numbers)
   minN = min(numbers)
   diffN = maxN - minN
-  step = diffN / (float(columns) * 0.9)
-  ## Print CDF
+## Print CDF
   print("CDF:")
+  step = diffN / (float(columns) * 0.9)
   if(minN < 0): negative = True
   for n in range(0, len(numbers)):
     if(numbers[n] >= 0):
@@ -106,11 +118,13 @@ def printNumbers(numbers):
         sys.stdout.write(fg.red + "|")
       sys.stdout.write(" " + str(round(numbers[n], 4)))
     print()
-  ## TODO: Print PDF
+## Print PDF
+  print()
   print("PDF:")
   step = diffN / (float(rows) * 0.9)
+  print("step: " + str(step))
   curCount = 0
-  for i in numpy.arange(minN, maxN, step):
+  for i in range(0, len(numpy.arange(minN, maxN, step))):
     curLow = step * i
     curHigh = step * (i + 1)
     if debug: print("curLow: " + str(curLow) + " curHigh: " + str(curHigh))
@@ -125,11 +139,5 @@ def printNumbers(numbers):
       sys.stdout.write(fg.white + "|")
     print()
     curCount = 0
-
-
-
-def stdoutRight(msg):
-  sys.stdout.write(msg.rjust(50))
-  # sys.stdout.write('\b' * len(msg))
 
 main()

@@ -1,41 +1,6 @@
 import sys
 import distribution
 
-# def main():
-#   print("[INFO     ] START")
-#   check()
-#   generate()
-
-# def check():
-#   global debug
-#   global count
-#   arglen = len(sys.argv)
-#   if(sys.argv[-1] == '-d' or sys.argv[-1] == '--debug'):
-#     debug = True
-#   if debug: print("[DEBG     ] Args: " + str(arglen))
-#   if (arglen < 2):
-#     print("[    ERROR] Function to be used is not defined.")
-#     raise AttributeError
-#   if (arglen == 2):
-#     print("[INFO     ] Numbers count not defined, generating just one.")
-#     count = 1
-#   else:
-#     count = int(sys.argv[2])
-
-# def generate():
-#   global generated
-#   print(sys.argv[1])
-#   print(debug)
-#   if (sys.argv[1] == '1'):
-#     for i in range(0, count):
-#       if debug: print("[DEBG     ] Calculting.")
-#       generated.append(triangular.calculate(0.0, 3.0, 1.5))
-#   elif (sys.argv[1] == '2'):
-#     for i in range(0, count):
-#       print("[DEBG     ] Getting.")
-#       generated.append(triangular.getTriangular(0.0, 3.0, 1.5))
-#   print(generated)
-
 def uniformRange(gencount, args):
   generated = []
   low = float(args[0])
@@ -55,6 +20,9 @@ def triangularRange(gencount, gentype, args):
   elif (gentype == 2):
     for i in range(0, gencount):
       generated.append(distribution.getTriangular(low, high, mode))
+  elif (gentype == 22):
+    for i in range(0, gencount):
+      generated.append(distribution.numpyTriangular(low, high, mode))
   return generated
 
 def betavariateRange(gencount, gentype, args):
@@ -72,6 +40,35 @@ def betavariateRange(gencount, gentype, args):
       generated.append(distribution.numpyBetavariate(alpha, beta))
   return generated
 
+def expovariateRange(gencount, gentype, args):
+  generated = []
+  lambd = float(args[0])
+  if (gentype == 5):
+    for i in range(0, gencount):
+      generated.append(distribution.calculateExpovariate(lambd))
+  elif (gentype == 6):
+    for i in range(0, gencount):
+      generated.append(distribution.getExpovariate(lambd))
+  elif (gentype == 23):
+    for i in range(0, gencount):
+      generated.append(distribution.numpyExpovariate(lambd))
+  return generated
+
+def lognormalvariateRange(gencount, gentype, args):
+  generated = []
+  mu = float(args[0])
+  sigma = float(args[1])
+  if (gentype == 11):
+    for i in range(0, gencount):
+      generated.append(distribution.calculateLognormalvariate(mu, sigma))
+  elif (gentype == 12):
+    for i in range(0, gencount):
+      generated.append(distribution.getLognormvariate(mu, sigma))
+  elif (gentype == 21):
+    for i in range(0, gencount):
+      generated.append(distribution.numpyLognormalvariate(mu, sigma))
+  return generated
+
 def normalvariateRange(gencount, gentype, args):
   generated = []
   mu = float(args[0])
@@ -82,4 +79,7 @@ def normalvariateRange(gencount, gentype, args):
   elif (gentype == 14):
     for i in range(0, gencount):
       generated.append(distribution.getNormalvariate(mu, sigma))
+  elif (gentype == 24):
+    for i in range(0, gencount):
+      generated.append(distribution.numpyNormalvariate(mu, sigma))
   return generated
