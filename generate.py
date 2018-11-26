@@ -3,6 +3,7 @@ import distribution
 
 def uniformRange(gencount, args):
   generated = []
+  checkArgs(2, args)
   low = float(args[0])
   high = float(args[1])
   for i in range(0, gencount):
@@ -11,6 +12,7 @@ def uniformRange(gencount, args):
 
 def triangularRange(gencount, gentype, args):
   generated = []
+  checkArgs(3, args)
   low = float(args[0])
   high = float(args[1])
   mode = float(args[2])
@@ -27,6 +29,7 @@ def triangularRange(gencount, gentype, args):
 
 def betavariateRange(gencount, gentype, args):
   generated = []
+  checkArgs(2, args)
   alpha = float(args[0])
   beta = float(args[1])
   if (gentype == 3):
@@ -42,6 +45,7 @@ def betavariateRange(gencount, gentype, args):
 
 def expovariateRange(gencount, gentype, args):
   generated = []
+  checkArgs(1, args)
   lambd = float(args[0])
   if (gentype == 5):
     for i in range(0, gencount):
@@ -56,6 +60,7 @@ def expovariateRange(gencount, gentype, args):
 
 def lognormalvariateRange(gencount, gentype, args):
   generated = []
+  checkArgs(2, args)
   mu = float(args[0])
   sigma = float(args[1])
   if (gentype == 11):
@@ -71,6 +76,7 @@ def lognormalvariateRange(gencount, gentype, args):
 
 def normalvariateRange(gencount, gentype, args):
   generated = []
+  checkArgs(2, args)
   mu = float(args[0])
   sigma = float(args[1])
   if (gentype == 13):
@@ -83,3 +89,9 @@ def normalvariateRange(gencount, gentype, args):
     for i in range(0, gencount):
       generated.append(distribution.numpyNormalvariate(mu, sigma))
   return generated
+
+def checkArgs(num, args):
+  if (len(args) > num):
+    raise AttributeError("Too many arguments")
+  if (len(args) < num):
+    raise AttributeError("Not enough arguments")
