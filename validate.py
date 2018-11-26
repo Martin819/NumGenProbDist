@@ -33,10 +33,14 @@ def check():
   global gentype
   global args
   arglen = len(sys.argv)
-  if(sys.argv[-1] == '-d' or sys.argv[-1] == '--debug' or sys.argv[-2] == '-d' or sys.argv[-2] == '--debug'):
-    debug = True
-  if(sys.argv[-1] == '-p' or sys.argv[-1] == '--print' or sys.argv[-2] == '-p' or sys.argv[-2] == '--print'):
-    printNum = True
+  for i in range(0,len(sys.argv)):
+    if(sys.argv[i] == "-p" or sys.argv[i] == "--print"):
+      printNum = True
+      break
+  for i in range(0,len(sys.argv)):
+    if(sys.argv[i] == "-d" or sys.argv[i] == "--debug"):
+      debug = True
+      break
   if debug: print("[DEBG     ] Args: " + str(arglen))
   if (arglen < 3):
     print("[    ERROR] Not enough attributes.")
@@ -50,7 +54,12 @@ def switcher_gentype(gentype):
   switcher = {
     0: "Uniform Python",
     1: "Triangular own",
-    2: "Triangular Python"
+    2: "Triangular Python",
+    3: "Beta own",
+    4: "Beta Python",
+    20: "Beta NumPy",
+    13: "Normal own",
+    14: "Normal Python"
   }
   print("[INFO     ] Type: " + switcher.get(gentype, "Invalid type"))
 
@@ -72,6 +81,8 @@ def printNumbers(numbers):
   minN = min(numbers)
   diffN = maxN - minN
   step = diffN / (float(columns) * 0.9)
+  ## Print CDF
+  print("CDF:")
   if(minN < 0): negative = True
   for n in range(0, len(numbers)):
     if(numbers[n] >= 0):
@@ -95,6 +106,27 @@ def printNumbers(numbers):
         sys.stdout.write(fg.red + "|")
       sys.stdout.write(" " + str(round(numbers[n], 4)))
     print()
+  ## TODO: Print PDF
+  print("PDF:")
+  step = diffN / (float(rows) * 0.9)
+  curCount = 0
+  for i in numpy.arange(minN, maxN, step):
+    curLow = step * i
+    curHigh = step * (i + 1)
+    if debug: print("curLow: " + str(curLow) + " curHigh: " + str(curHigh))
+    for n in range(0, len(numbers)):
+      if (numbers[n] >= curLow and numbers[n] < curHigh):
+        curCount = curCount + 1
+    lowTag = str(round(curLow,4))
+    sys.stdout.write(fg.white + str(round(curLow,4)) + " ")
+    for k in range (0, 7 - len(lowTag)):
+      sys.stdout.write(fg.white + " ")
+    for j in range (0, curCount):
+      sys.stdout.write(fg.white + "|")
+    print()
+    curCount = 0
+
+
 
 def stdoutRight(msg):
   sys.stdout.write(msg.rjust(50))
