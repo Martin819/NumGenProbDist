@@ -22,15 +22,16 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 
 - `<args>` set of arguments for selected distribution type in format `"arg1, arg2, arg3"`
 
-- `<num_count>` parameters is integer which says how many nubers should be generated
+- `<num_count>` parameters is integer which says how many numbers should be generated
 
 - See below for list of distribution types and valid arguments.
 
 #### Optional parameters:
 - `-d` or `--debug` - enables debug mode
 - `-p` or `--print` - print CDF and PDF of the numbers in CLI stdout
-- `-c` or `--csv` - output generated numbers into csv file
+- `-c` or `--csv` - output generated numbers into csv file - can be followed by a string defining output directory path
 - `-v` or `--validate` - validates results
+- `-b` or `--batch` - enables generating multiple number sequences in separate runs - should be followed by a number defining number of runs
 
 #### Distribution types:
 

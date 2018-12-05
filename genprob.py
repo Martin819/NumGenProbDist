@@ -7,25 +7,33 @@ debug = False
 printNum = False
 validateRes = False
 genCsv = False
+genPath = ""
+run = 0
 count = 0
 gentype = 0
+batch = 1
 args = []
 
 def main():
   print("[INFO     ] START")
+  global run
   check()
-  switcher_gentype(gentype)
-  numbers = getNumbers(gentype)
-  if validateRes: validate.validate(numbers)
-  if printNum: printNumbers(numbers)
-  if genCsv: generateCsv(numbers, gentype)
+  for i in range(batch):
+    run = run + 1
+    switcher_gentype(gentype)
+    numbers = getNumbers(gentype)
+    if validateRes: validate.validate(numbers)
+    if printNum: printNumbers(numbers)
+    if genCsv: generateCsv(numbers, gentype)
 
 def check():
   global debug
   global printNum
   global validateRes
   global genCsv
+  global genPath
   global count
+  global batch
   global gentype
   global args
   arglen = len(sys.argv)
@@ -40,11 +48,24 @@ def check():
   for i in range(0,len(sys.argv)):
     if(sys.argv[i] == "-c" or sys.argv[i] == "--csv"):
       genCsv = True
-      break
+      try:
+        if (len(sys.argv) > (i + 1)):
+          genPath = sys.argv[i + 1]
+        break
+      except ValueError:
+        print("Invalid value provided for parameter genPath")
   for i in range(0,len(sys.argv)):
     if(sys.argv[i] == "-v" or sys.argv[i] == "--validate"):
       validateRes = True
       break
+  for i in range(0,len(sys.argv)):
+    if(sys.argv[i] == "-b" or sys.argv[i] == "--batch"):
+      try:
+        if (len(sys.argv) > (i + 1)):
+          batch = int(sys.argv[i + 1])
+        break
+      except ValueError:
+        print("Invalid value provided for parameter batch")
   if debug: print("[DEBG     ] Args: " + str(arglen))
   if (arglen < 3):
     raise AttributeError("Not enough attributes")
@@ -150,8 +171,11 @@ def printNumbers(numbers):
 
 def generateCsv(numbers, gentype):
   import datetime, csv
+  global run
   now = datetime.datetime.now()
-  filename = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S") + ".csv"
+  filename = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S") + "_" + str(run) + ".csv"
+  if (genPath != ""):
+    filename = genPath + filename
   with open(filename, 'w', newline='') as numbersCsv:
     wr = csv.writer(numbersCsv, quoting=csv.QUOTE_ALL)
     wr.writerow(numbers)
