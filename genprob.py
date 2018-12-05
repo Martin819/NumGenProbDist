@@ -7,7 +7,9 @@ debug = False
 printNum = False
 validateRes = False
 genCsv = False
+genTxt = False
 genPath = ""
+txtPath = ""
 run = 0
 count = 0
 gentype = 0
@@ -25,6 +27,7 @@ def main():
     if validateRes: validate.validate(numbers)
     if printNum: printNumbers(numbers)
     if genCsv: generateCsv(numbers, gentype)
+    if genTxt: generateTxt(numbers, gentype)
 
 def check():
   global debug
@@ -32,6 +35,8 @@ def check():
   global validateRes
   global genCsv
   global genPath
+  global genTxt
+  global txtPath
   global count
   global batch
   global gentype
@@ -54,6 +59,15 @@ def check():
         break
       except ValueError:
         print("Invalid value provided for parameter genPath")
+  for i in range(0,len(sys.argv)):
+    if(sys.argv[i] == "-t" or sys.argv[i] == "--txt"):
+      genTxt = True
+      try:
+        if (len(sys.argv) > (i + 1)):
+          txtPath = sys.argv[i + 1]
+        break
+      except ValueError:
+        print("Invalid value provided for parameter txtPath")
   for i in range(0,len(sys.argv)):
     if(sys.argv[i] == "-v" or sys.argv[i] == "--validate"):
       validateRes = True
@@ -179,5 +193,16 @@ def generateCsv(numbers, gentype):
   with open(filename, 'w', newline='') as numbersCsv:
     wr = csv.writer(numbersCsv, quoting=csv.QUOTE_ALL)
     wr.writerow(numbers)
+
+def generateTxt(numbers, gentype):
+  import datetime
+  global run
+  now = datetime.datetime.now()
+  filename = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S") + "_" + str(run) + ".txt"
+  if (txtPath != ""):
+    filename = txtPath + filename
+  with open(filename, 'w') as f:
+    for item in numbers:
+        f.write("%s\n" % item)
 
 main()

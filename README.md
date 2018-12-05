@@ -30,6 +30,7 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 - `-d` or `--debug` - enables debug mode
 - `-p` or `--print` - print CDF and PDF of the numbers in CLI stdout
 - `-c` or `--csv` - output generated numbers into csv file - can be followed by a string defining output directory path
+- `-t` or `--txt` - output generated numbers into txt file - can be followed by a string defining output directory path
 - `-v` or `--validate` - validates results
 - `-b` or `--batch` - enables generating multiple number sequences in separate runs - should be followed by a number defining number of runs
 
