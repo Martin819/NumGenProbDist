@@ -36,7 +36,7 @@ def numpyBetavariate(alpha, beta):
 
 ## Exponential
 def calculateExpovariate(lambd):
-  return log(random.uniform(0.0,1.0))/lambd
+  return log(1.0 - random.uniform(0.0,1.0))/lambd
 
 def getExpovariate(lambd):
   return random.expovariate(lambd)

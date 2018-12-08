@@ -4,7 +4,7 @@
 #python3 genprob.py 3 "2.0, 2.0" 10000 -v -t _output/ -b 100 -r
 #python3 genprob.py 4 "2.0, 2.0" 10000 -v -t _output/ -b 100 -r
 #python3 genprob.py 20 "2.0, 2.0" 10000 -v -t _output/ -b 100 -r
-#python3 genprob.py 5 "1.0" 10000 -v -t _output/ -b 100 -r
+python3 genprob.py 5 "1.0" 10000 -v -t _output/ -b 100 -r
 #python3 genprob.py 6 "1.0" 10000 -v -t _output/ -b 100 -r
 #python3 genprob.py 23 "1.0" 10000 -v -t _output/ -b 100 -r
 python3 genprob.py 11 "0.0, 0.5" 10000 -v -t _output/ -b 100 -r
