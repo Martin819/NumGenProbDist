@@ -31,7 +31,7 @@ def main():
       filePrefix = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S")
   for i in range(batch):
     if (batch > 1):
-      print("Run " + str(run) + ":")
+      print("Run " + str(run + 1) + ":")
       print("======")
     run = run + 1
     switcher_gentype(gentype)
