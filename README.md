@@ -9,9 +9,9 @@ Simple project which shows difference between probability distribution when gene
 This project only supports Python 3.4+.
 
 
-This project uses `numpy` and `sty` libraries
+This project uses `numpy`, `scipy` and `sty` libraries
 
-Use `pip install numpy` and `pip install sty` to obtain it.
+Use `pip install numpy`, `pip install scipy` and `pip install sty` to obtain it.
 
 ### Syntax
 
@@ -30,7 +30,9 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 - `-d` or `--debug` - enables debug mode
 - `-p` or `--print` - print CDF and PDF of the numbers in CLI stdout
 - `-c` or `--csv` - output generated numbers into csv file - can be followed by a string defining output directory path
-- `-v` or `--validate` - validates results
+- `-t` or `--txt` - output generated numbers into txt file - can be followed by a string defining output directory path
+- `-v` or `--validate` - validates results and print the validations for every run and total results
+- `-r` or `--result` - print only the total results
 - `-b` or `--batch` - enables generating multiple number sequences in separate runs - should be followed by a number defining number of runs
 
 #### Distribution types:
@@ -53,3 +55,16 @@ Use `pip install numpy` and `pip install sty` to obtain it.
 | Normal (Own impl) | 13 | "mu, sigma" |
 | Normal (Python impl) | 14 | "mu, sigma" |
 | Normal (NumPy impl) | 24 | "mu, sigma" |
+
+## Example:
+
+### Command:
+
+`python genprob.py 1 "0.0, 1.0, 0.75" 1000 -v -t _output/ -b 1000 -r`
+
+  - uses Triangular own implementation with arguments low=0.0, high=1.0, mode=0.75
+  - every run conssits of 1000 numbers
+  - validates results
+  - generates txt file to "_output/" directory
+  - runs batch of 1000 runs
+  - only prints total validation results

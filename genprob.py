@@ -5,9 +5,12 @@ import validate
 
 debug = False
 printNum = False
+printOnlyTotal = False
 validateRes = False
 genCsv = False
+genTxt = False
 genPath = ""
+txtPath = ""
 run = 0
 count = 0
 gentype = 0
@@ -15,16 +18,31 @@ batch = 1
 args = []
 
 def main():
-  print("[INFO     ] START")
+  import datetime
   global run
   check()
+  if (genCsv or genTxt):
+    now = datetime.datetime.now()
+    if(batch > 1):
+      dirName = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S")
+      filePrefix = dirName
+    else:
+      dirName = ""
+      filePrefix = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S")
   for i in range(batch):
+    if (batch > 1):
+      print("Run " + str(run) + ":")
+      print("======")
     run = run + 1
     switcher_gentype(gentype)
     numbers = getNumbers(gentype)
-    if validateRes: validate.validate(numbers)
     if printNum: printNumbers(numbers)
-    if genCsv: generateCsv(numbers, gentype)
+    if validateRes:
+      validate.validate(numbers, printOnlyTotal)
+      if ((batch > 1) and (run == batch)):
+        validate.printTotal()
+    if genCsv: generateCsv(numbers, filePrefix, dirName)
+    if genTxt: generateTxt(numbers, filePrefix, dirName)
 
 def check():
   global debug
@@ -32,8 +50,11 @@ def check():
   global validateRes
   global genCsv
   global genPath
+  global genTxt
+  global txtPath
   global count
   global batch
+  global printOnlyTotal
   global gentype
   global args
   arglen = len(sys.argv)
@@ -55,6 +76,15 @@ def check():
       except ValueError:
         print("Invalid value provided for parameter genPath")
   for i in range(0,len(sys.argv)):
+    if(sys.argv[i] == "-t" or sys.argv[i] == "--txt"):
+      genTxt = True
+      try:
+        if (len(sys.argv) > (i + 1)):
+          txtPath = sys.argv[i + 1]
+        break
+      except ValueError:
+        print("Invalid value provided for parameter txtPath")
+  for i in range(0,len(sys.argv)):
     if(sys.argv[i] == "-v" or sys.argv[i] == "--validate"):
       validateRes = True
       break
@@ -66,6 +96,10 @@ def check():
         break
       except ValueError:
         print("Invalid value provided for parameter batch")
+  for i in range(0,len(sys.argv)):
+    if(sys.argv[i] == "-r" or sys.argv[i] == "--results"):
+      printOnlyTotal = True
+      break
   if debug: print("[DEBG     ] Args: " + str(arglen))
   if (arglen < 3):
     raise AttributeError("Not enough attributes")
@@ -96,7 +130,7 @@ def switcher_gentype(gentype, doReturn = 0):
   if doReturn:
     return switcher.get(gentype, "Invalid type")
   else:
-    print("[INFO     ] Type: " + switcher.get(gentype, "Invalid type"))
+    print("Type: " + switcher.get(gentype, "Invalid type"))
 
 def getNumbers(t):
   if (t == 0):
@@ -169,15 +203,26 @@ def printNumbers(numbers):
     print()
     curCount = 0
 
-def generateCsv(numbers, gentype):
-  import datetime, csv
+def generateCsv(numbers, filePrefix, dirName):
+  import csv, os
   global run
-  now = datetime.datetime.now()
-  filename = switcher_gentype(gentype, 1).replace(" ", "-") + "_" + now.strftime("%Y-%m-%d-%H-%M-%S") + "_" + str(run) + ".csv"
+  filename = dirName + "/" + filePrefix + "_" + str(run) + ".csv"
   if (genPath != ""):
     filename = genPath + filename
+  os.makedirs(os.path.dirname(filename), exist_ok=True)
   with open(filename, 'w', newline='') as numbersCsv:
     wr = csv.writer(numbersCsv, quoting=csv.QUOTE_ALL)
     wr.writerow(numbers)
+
+def generateTxt(numbers, filePrefix, dirName):
+  import os
+  global run
+  filename = filename = dirName + "/" + filePrefix + "_" + str(run) + ".txt"
+  if (txtPath != ""):
+    filename = txtPath + filename
+  os.makedirs(os.path.dirname(filename), exist_ok=True)
+  with open(filename, 'w') as f:
+    for item in numbers:
+        f.write("%s\n" % item)
 
 main()
