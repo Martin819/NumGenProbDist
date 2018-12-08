@@ -1,0 +1,495 @@
+Run 100:
+======
+Type: Triangular own
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.001677889887119491, max: 0.9995727935950641, meanN: 0.58363596227697
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6571
+               - Max: 6789
+               - Avg: 6668.08
+     - Maximum run sequence:
+               - Max: 9
+               - Avg: 6.33
+     - Average run sequence:
+               - Min: 1.4725290911769038
+               - Max: 1.5216861969258866
+               - Avg: 1.4995459660982582
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 0.00012528782525287826
+               - Max: 0.03524435093244351
+               - Avg: 0.008416864578288646
+     - Spearman corellation coef:
+               - Min: 0.00012528782525287824
+               - Max: 0.03524435093244351
+               - Avg: 0.008416864578288646
+===============================
+END
+===============================
+Run 100:
+======
+Type: Triangular Python
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.00022453946397363344, max: 0.9994945731251555, meanN: 0.5832865031962405
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6569
+               - Max: 6756
+               - Avg: 6667.41
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.36
+     - Average run sequence:
+               - Min: 1.4800177619893429
+               - Max: 1.5221494900289236
+               - Avg: 1.4996647997295558
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 0.0002787142107871421
+               - Max: 0.034719965099199654
+               - Avg: 0.007501455863654559
+     - Spearman corellation coef:
+               - Min: 0.00027871421078714214
+               - Max: 0.03471996509919965
+               - Avg: 0.007501455863654558
+===============================
+END
+===============================
+Run 100:
+======
+Type: Triangular NumPy
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.0009763748425120003, max: 0.9993883099875739, meanN: 0.5836034387557969
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6555
+               - Max: 6789
+               - Avg: 6670.81
+     - Maximum run sequence:
+               - Max: 9
+               - Avg: 6.45
+     - Average run sequence:
+               - Min: 1.4728236853733983
+               - Max: 1.525400457665904
+               - Avg: 1.4989162587233764
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 8.169668481696684e-05
+               - Max: 0.029176381671763816
+               - Avg: 0.007567933198879332
+     - Spearman corellation coef:
+               - Min: 8.169668481696684e-05
+               - Max: 0.029176381671763816
+               - Avg: 0.007567933198879332
+===============================
+END
+===============================
+Run 100:
+======
+Type: Beta own
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.00032926989947476104, max: 0.9993146255956594, meanN: 0.49979142954501937
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6545
+               - Max: 6746
+               - Avg: 6663.2
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.36
+     - Average run sequence:
+               - Min: 1.482063445004447
+               - Max: 1.5277310924369747
+               - Avg: 1.5006419616959454
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 5.62372805623728e-06
+               - Max: 0.021459326590593266
+               - Avg: 0.00848795302047953
+     - Spearman corellation coef:
+               - Min: 5.6237280562372795e-06
+               - Max: 0.021459326590593266
+               - Avg: 0.00848795302047953
+===============================
+END
+===============================
+Run 100:
+======
+Type: Beta Python
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.00035550852799003666, max: 0.9993830164263412, meanN: 0.49994984909449247
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6550
+               - Max: 6759
+               - Avg: 6662.58
+     - Maximum run sequence:
+               - Max: 9
+               - Avg: 6.51
+     - Average run sequence:
+               - Min: 1.4792129013167628
+               - Max: 1.5265648854961833
+               - Avg: 1.5007546171560253
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 3.6425040364250404e-06
+               - Max: 0.02469185398291854
+               - Avg: 0.007894840859268408
+     - Spearman corellation coef:
+               - Min: 3.642504036425041e-06
+               - Max: 0.02469185398291854
+               - Avg: 0.007894840859268408
+===============================
+END
+===============================
+Run 100:
+======
+Type: Beta NumPy
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.00019147804238559124, max: 0.9994547513597045, meanN: 0.5001722210551056
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6574
+               - Max: 6771
+               - Avg: 6670.01
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.38
+     - Average run sequence:
+               - Min: 1.4765913454438044
+               - Max: 1.520991785822939
+               - Avg: 1.4990925074883092
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 0.00018771398587713985
+               - Max: 0.027962697759626978
+               - Avg: 0.007155590809475908
+     - Spearman corellation coef:
+               - Min: 0.00018771398587713988
+               - Max: 0.027962697759626974
+               - Avg: 0.007155590809475908
+===============================
+END
+===============================
+Run 100:
+======
+Type: Exponential own
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: -14.768328941617392, max: -8.872182366598611e-07, meanN: -1.0000270546871526
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6569
+               - Max: 6803
+               - Avg: 6669.1
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.48
+     - Average run sequence:
+               - Min: 1.4697927384977216
+               - Max: 1.5221494900289236
+               - Avg: 1.4993107825358865
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 3.6490788364907886e-05
+               - Max: 0.036236601806366016
+               - Avg: 0.008357766296697664
+     - Spearman corellation coef:
+               - Min: 3.6490788364907886e-05
+               - Max: 0.036236601806366016
+               - Avg: 0.008357766296697664
+===============================
+END
+===============================
+Run 100:
+======
+Type: Exponential Python
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 4.2008237341423386e-07, max: 14.340831987518266, meanN: 0.9993948481293666
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6551
+               - Max: 6779
+               - Avg: 6670.07
+     - Maximum run sequence:
+               - Max: 9
+               - Avg: 6.32
+     - Average run sequence:
+               - Min: 1.4749963121404337
+               - Max: 1.526331857731644
+               - Avg: 1.4990861189827613
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 8.169849681698497e-05
+               - Max: 0.024913154853131548
+               - Avg: 0.00779165493315655
+     - Spearman corellation coef:
+               - Min: 8.169849681698496e-05
+               - Max: 0.02491315485313155
+               - Avg: 0.00779165493315655
+===============================
+END
+===============================
+Run 100:
+======
+Type: Exponential NumPy
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 8.058688176490338e-07, max: 13.724234790755629, meanN: 0.9980126746086632
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6561
+               - Max: 6821
+               - Avg: 6666.62
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.34
+     - Average run sequence:
+               - Min: 1.465914088843278
+               - Max: 1.5238530711781741
+               - Avg: 1.499861707531029
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 0.0003579160235791602
+               - Max: 0.02726472479664725
+               - Avg: 0.008033724686697247
+     - Spearman corellation coef:
+               - Min: 0.0003579160235791602
+               - Max: 0.02726472479664725
+               - Avg: 0.008033724686697247
+===============================
+END
+===============================
+Run 100:
+======
+Type: Lognormal NumPy
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.09455371715659393, max: 10.16865272677616, meanN: 1.1337715720748058
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6577
+               - Max: 6781
+               - Avg: 6669.88
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.33
+     - Average run sequence:
+               - Min: 1.4745612741483558
+               - Max: 1.5202980082104303
+               - Avg: 1.4991242625268975
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 1.902451219024512e-05
+               - Max: 0.02081787299217873
+               - Avg: 0.007215034523190346
+     - Spearman corellation coef:
+               - Min: 1.902451219024512e-05
+               - Max: 0.020817872992178733
+               - Avg: 0.007215034523190346
+===============================
+END
+===============================
+Run 100:
+======
+Type: Lognormal own
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.10298925421010911, max: 13.000774663902668, meanN: 1.1330924483549254
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6558
+               - Max: 6747
+               - Avg: 6663.23
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.37
+     - Average run sequence:
+               - Min: 1.4818437824218171
+               - Max: 1.5247026532479415
+               - Avg: 1.5006066370808693
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 0.00026101555461015556
+               - Max: 0.0294782600227826
+               - Avg: 0.00889231300644313
+     - Spearman corellation coef:
+               - Min: 0.0002610155546101555
+               - Max: 0.0294782600227826
+               - Avg: 0.00889231300644313
+===============================
+END
+===============================
+Run 100:
+======
+Type: Lognormal Python
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.08937077065743453, max: 10.306321991577, meanN: 1.133859202277471
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6585
+               - Max: 6777
+               - Avg: 6668.48
+     - Maximum run sequence:
+               - Max: 9
+               - Avg: 6.4
+     - Average run sequence:
+               - Min: 1.4754316069057105
+               - Max: 1.5184510250569476
+               - Avg: 1.4994240637589409
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 8.863544488635445e-05
+               - Max: 0.023926893119268933
+               - Avg: 0.007725273837452739
+     - Spearman corellation coef:
+               - Min: 8.863544488635443e-05
+               - Max: 0.02392689311926893
+               - Avg: 0.007725273837452739
+===============================
+END
+===============================
+Run 100:
+======
+Type: Lognormal NumPy
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: 0.09455371715659393, max: 10.16865272677616, meanN: 1.1337715720748058
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6577
+               - Max: 6781
+               - Avg: 6669.88
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.33
+     - Average run sequence:
+               - Min: 1.4745612741483558
+               - Max: 1.5202980082104303
+               - Avg: 1.4991242625268975
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 1.902451219024512e-05
+               - Max: 0.02081787299217873
+               - Avg: 0.007215034523190346
+     - Spearman corellation coef:
+               - Min: 1.902451219024512e-05
+               - Max: 0.020817872992178733
+               - Avg: 0.007215034523190346
+===============================
+END
+===============================
+Run 100:
+======
+Type: Normal Python
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: -4.484974075357211, max: 0.3859321441745869, meanN: -1.9998304287955615
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6537
+               - Max: 6783
+               - Avg: 6667.85
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.39
+     - Average run sequence:
+               - Min: 1.474126492702344
+               - Max: 1.5294477589108153
+               - Avg: 1.4995794604353216
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 1.5592488155924882e-05
+               - Max: 0.027121036399210364
+               - Avg: 0.008011450155074502
+     - Spearman corellation coef:
+               - Min: 1.5592488155924882e-05
+               - Max: 0.027121036399210364
+               - Avg: 0.008011450155074502
+===============================
+END
+===============================
+Run 100:
+======
+Type: Normal NumPy
+===============================
+TOTAL RESULTS:
+-------------------------------
+Globals: min: -4.353835199005054, max: 0.2995375463712673, meanN: -1.9999650970597855
+-------------------------------
+RunsTest:
+     - Number of runs:
+               - Min: 6595
+               - Max: 6757
+               - Avg: 6665.15
+     - Maximum run sequence:
+               - Max: 8
+               - Avg: 6.38
+     - Average run sequence:
+               - Min: 1.4796507325736274
+               - Max: 1.5161485974222897
+               - Avg: 1.5002023007014178
+-------------------------------
+Position corellation test (abs values):
+     - Pearson corellation coef:
+               - Min: 0.00015317577753175778
+               - Max: 0.024980538633805387
+               - Avg: 0.008845735110857351
+     - Spearman corellation coef:
+               - Min: 0.00015317577753175778
+               - Max: 0.024980538633805387
+               - Avg: 0.008845735110857351
+===============================
+END
+===============================

@@ -38,15 +38,15 @@ def numpyBetavariate(alpha, beta):
 def calculateExpovariate(lambd):
   return log(random.uniform(0.0,1.0))/lambd
 
-def getExpovariate(alpha, beta):
-  return random.expovariate(alpha, beta)
+def getExpovariate(lambd):
+  return random.expovariate(lambd)
 
 def numpyExpovariate(lambd):
   return numpy.random.exponential(lambd)
 
 ## Lognormal
 def calculateLognormalvariate(mu, sigma):
-  return exp(random.normalvariate(mu, sigma))
+  return exp(calculateNormalvariate(mu, sigma))
 
 def getLognormvariate(mu, sigma):
   return random.lognormvariate(mu, sigma)
